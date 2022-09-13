@@ -1,6 +1,6 @@
-baseURL: http://www.vemu.io
+baseURL: http://www.aivision.app
 languageCode: en-us
-title: Vemu
+title: AI Vision 
 theme: "PaperMod"
 enableEmoji: true
 enableGitInfo: true
