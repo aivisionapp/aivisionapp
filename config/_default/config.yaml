@@ -1,0 +1,8 @@
+baseURL: http://www.vemu.io
+languageCode: en-us
+title: Vemu
+theme: "PaperMod"
+enableEmoji: true
+enableGitInfo: true
+
+
