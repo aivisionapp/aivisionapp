@@ -10,3 +10,9 @@ git submodule add --depth=1 https://github.com/adityatelange/hugo-PaperMod.git t
 ```
  hugo server -D
 ```
+
+
+## Tools will be used 
+flux -- kubernetes operator for gitops
+crossplane -- kubernetes operator for cloud native infrastructure
+argocd -- kubernetes operator for gitops
