@@ -13,7 +13,7 @@ showToc: true
 TocOpen: false
 draft: false
 hidemeta: false
-comments: true
+comments: false
 canonicalURL: "https://www.aivision.app/ai/tensorflow-model-maker-part-1/"
 showReadingTime: true
 ShowReadingTime: true
@@ -169,7 +169,7 @@ model = object_detector.create(train_data, model_spec=spec, batch_size=8, train_
 
 ```
 
-- once the training is done , we will export the model , shown in the below code , the model will be exported to the current directory , then you can copy it to your google drive if you are already mounted it , or you can download it from the left menu , then expand the files folder , then expand the content folder , then expand the current folder , then you will find the model file , then right click on it and select "Download" , then you can download it to your local machine.
+- once the training is done , we will export the model , shown in the below code , the model will be exported to the current directory , then you can copy it to your google drive if you are already mounted it , or you can download it from the left menu.
 
 ```python
 model.export(export_dir='.')
