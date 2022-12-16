@@ -12,14 +12,12 @@ draft: false
 ---
 The Efficientdet lite object detection model is a lightweight, high-performing model developed by Google for deployment on devices with limited resources such as smartphones and edge devices. It is compatible with a wide range of platforms and devices including Android, Linux, Windows, Chrome OS, and iPhone, thanks to the cross-platform compatibility of the Tensorflow runtime. The model can achieve an inference speed of 20 milliseconds, making it fast for low-resource devices, and it can also be run on Intel CPUs without a GPU using the "XNNPack delegate" feature. Google provides an easy-to-use API called "Tensorflow model maker" for building and training the model, simplifying the development process. In this tutorial, we will show you how to prepare a dataset, build and train an object detection model using efficientnet lite architecture and Tensorflow Lite model maker, and use the trained model to detect apples and oranges in images. We will also provide example code and a complete running notebook for Google Colab, as well as example code for running the model on edge devices and devices with Intel CPUs but no GPU, and an Android application for live inference.
 
-### Creating the dataset 
+### Creating the dataset
 
--  Collect the images you want to detect.
+- Collect the images you want to detect.
 
-
-- Go to https://www.makesense.ai/
+- Go to <https://www.makesense.ai/>
 Choose "Get Started" and then choose the images which you already collected from your computer.
-
 
 - After uploading the images, choose "Object Detection" and then "Start Labeling".
 
@@ -39,63 +37,51 @@ Choose "Get Started" and then choose the images which you already collected from
 
 - take 20% of the images and put them in a separate folder along with the XML files for each image, this will be our test set , the rest of the images will be our training set.
 
-
 - you will end up with two folders , one for the training set and one for the test set , each folder contains the image folder and the XML folder , as shown in the image below.
-
 
 ![alt text](dataset_folders_image.png "Dataset")
 
+- Zip the dataset folder and upload them to Google Drive or github
 
-- Zip the training set folder and the test set folder and upload them to Google Drive or github
-
-
-- click the below notebook link 
+- click the below notebook link , which contain the running example of all code.
 
 [Link to Colab Notebook](https://colab.research.google.com/github/Abdullamhd/od_efficientdet/blob/main/tflite_model_maker_github_hosted.ipynb)
 
+- if you are using Google Drive , from the left menu select "Files" and then "Mount Drive" , then click on the link and follow the instructions to mount your drive , then create the following folders by running the below cell in notebook which is pro
 
-- if you are using Google Drive , from the left menu select "Files" and then "Mount Drive" , then click on the link and follow the instructions to mount your drive , then create the following folders by running the below cell.
-
-
-{{< highlight go >}} 
+{{< highlight go >}}
 
 !mkdir raw_data
 !mkdir train_data
  {{< /highlight >}}
 
-
-
-- then copy the dataset from your drive to the raw_data folder , as below code , you can find the path 
+- then copy the dataset from your drive to the raw_data folder , as below code , you can find the path
 of the dataset from left menu then expand the drive folder and then expand the folder you uploaded the dataset to , then right click on the dataset and select "Copy Path" , then paste it in the code below , then run the cell.
 
-{{< highlight go >}} 
+{{< highlight go >}}
 
 !cp /content/drive/MyDrive/tensorflow_lite_dataset/dataset_apple_orange.zip /content/raw_data
 
  {{< /highlight >}}
 
-
 - if you are hosting the dataset on github , then you can skip the above step and run the below code to download the dataset from github , change the url to your dataset url.
 
-{{< highlight go >}} 
+{{< highlight go >}}
 
-!wget -P /content/raw_data https://raw.githubusercontent.com/Abdullamhd/od_efficientdet/main/dataset_apple_orange.zip
+!wget -P /content/raw_data <https://raw.githubusercontent.com/Abdullamhd/od_efficientdet/main/dataset_apple_orange.zip>
 
  {{< /highlight >}}
 
-
 - then unzip the dataset to tail_data folder , as shown in the below code , you can change the path of the dataset if you are using a different path.
 
-{{< highlight go >}} 
+{{< highlight go >}}
 
 %%capture
 !unzip /content/raw_data/dataset_apple_orange.zip  -d /content/train_data
  {{< /highlight >}}
 
-
-
 - Now our dataset is ready , we will choose the model from the below table , the model is postfixed with
-number from zero to four , the number indicates the size of the model , the bigger the number the bigger the model size , the bigger the model size the better the accuracy , but the bigger the model size the slower the inference time , so you have to choose the model size based on your use case , i will train the 
+number from zero to four , the number indicates the size of the model , the bigger the number the bigger the model size , the bigger the model size the better the accuracy , but the bigger the model size the slower the inference time , so you have to choose the model size based on your use case , i will train the
 EfficientDet-Lite0 model , which is the smallest model , the model size is 4.4 MB , the inference time is 37 ms (*Latency measured on Pixel 4 using 4 threads on CPU*)  , and the average precision is 25.69%.
 
 | Model architecture  | Size(MB)* | Latency(ms)** | Average Precision*** |
@@ -156,7 +142,7 @@ test_data =  object_detector.DataLoader.from_pascal_voc('/content/train_data/dat
 
 ```
 
-- Now we will train the model , shown in the below code , tje default epoches is 50 , you can change it to any number you want , the batch size is 8 , the train_whole_model is set to True , this will train the whole model , if you set it to False , it will train only the last layer. 
+- Now we will train the model , shown in the below code , tje default epoches is 50 , you can change it to any number you want , the batch size is 8 , the train_whole_model is set to True , this will train the whole model , if you set it to False , it will train only the last layer.
 
 ```python
 model = object_detector.create(train_data, model_spec=spec, batch_size=8, train_whole_model=True, validation_data=test_data)
@@ -170,23 +156,10 @@ model.export(export_dir='.')
     
 ```
 
-- for copying the model to your google drive , run the below code 
-{{< highlight go >}} 
+- for copying the model to your google drive , run the below code
+{{< highlight go >}}
 
     !cp /content/model.tflite /content/drive/MyDrive/tensorflow_lite_dataset
  {{< /highlight >}}
 
-
 In the next post we will see how to deploy the model to android device , and linux machine , and how to use it in our applications.
-
-
-
-
-
-
-
-
-
-
-
-
