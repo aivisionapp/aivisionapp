@@ -10,21 +10,7 @@ keywords:
 draft: false 
 
 ---
-The Efficientdet lite object detection model by Google is a lightweight version of the original Efficientdet model that is designed to be faster and more efficient while still maintaining high accuracy. This makes it a good choice for deployment in devices with limited resources such as smartphones and other edge devices.
-
-One of the key benefits of using the Efficientdet lite model is its compatibility with a wide range of platforms and devices. It can be easily deployed on Android, Linux, Windows, Chrome OS, and iPhone devices, thanks to the cross-platform compatibility of the Tensorflow runtime. This allows developers to build and deploy object detection applications on a wide range of devices, making it a versatile and flexible choice.
-
-Another advantage of the Efficientdet lite model is its high performance. The model is capable of achieving an inference speed of 20 milliseconds, which is very fast for a low-resource device. This means that it can process images and detect objects quickly and accurately, even on hardware with limited resources.
-
-Additionally, the Efficientdet lite model can be run on Intel CPUs without a GPU by using the "XNNPack delegate" feature. This allows it to achieve high performance on low-cost edge devices without the need for a dedicated GPU. This makes it a good fit for applications that need to run on devices with limited resources, such as low-cost IoT devices.
-
-Finally, the Efficientdet lite model is easy to build and use. Google provides a ready API called "Tensorflow model maker" that makes it easy to create and train the model.This API allows developers to focus on building their applications without worrying about the underlying model architecture, simplifying the development process and speeding up the time to market for their applications.
-
-We will explain how to prepare a dataset for training and testing an object detection model with efficientnet lite architecture . We will be using a dataset containing images of apples and oranges, and we will show you how to split the dataset into train and test sets.
-
-Next, We will provide example code and a complete running notebook for Google Colab, as well as example code for running the model on edge devices and devices with Intel CPUs but no GPU. Additionally, we will provide an Android application for live inference and four versions of the efficientnet lite architecture that can be run on all platforms.
-
-By following the steps in this post,you will learn how to prepare a dataset, build and train an object detection model using efficientnet lite architecture and Tensorflow Lite model maker, and then use the trained model to detect apples and oranges in images. This will give you the knowledge and tools needed to create and deploy your own object detection applications
+The Efficientdet lite object detection model is a lightweight, high-performing model developed by Google for deployment on devices with limited resources such as smartphones and edge devices. It is compatible with a wide range of platforms and devices including Android, Linux, Windows, Chrome OS, and iPhone, thanks to the cross-platform compatibility of the Tensorflow runtime. The model can achieve an inference speed of 20 milliseconds, making it fast for low-resource devices, and it can also be run on Intel CPUs without a GPU using the "XNNPack delegate" feature. Google provides an easy-to-use API called "Tensorflow model maker" for building and training the model, simplifying the development process. In this tutorial, we will show you how to prepare a dataset, build and train an object detection model using efficientnet lite architecture and Tensorflow Lite model maker, and use the trained model to detect apples and oranges in images. We will also provide example code and a complete running notebook for Google Colab, as well as example code for running the model on edge devices and devices with Intel CPUs but no GPU, and an Android application for live inference.
 
 ### Creating the dataset 
 
