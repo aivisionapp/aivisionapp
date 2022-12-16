@@ -4,5 +4,7 @@ title: AI Vision
 theme: "PaperMod"
 enableEmoji: true
 enableGitInfo: true
-
+markup:
+  highlight:
+    lineNos: true
 
