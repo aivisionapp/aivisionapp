@@ -12,7 +12,7 @@ draft: false
 ---
 The Efficientdet lite object detection model is a lightweight, high-performing model developed by Google for deployment on devices with limited resources such as smartphones and edge devices. It is compatible with a wide range of platforms and devices including Android, Linux, Windows, Chrome OS, and iPhone, thanks to the cross-platform compatibility of the Tensorflow runtime. The model can achieve an inference speed of 20 milliseconds, making it fast for low-resource devices, and it can also be run on Intel CPUs without a GPU using the "XNNPack delegate" feature. Google provides an easy-to-use API called "Tensorflow model maker" for building and training the model, simplifying the development process. In this tutorial, we will show you how to prepare a dataset, build and train an object detection model using efficientnet lite architecture and Tensorflow Lite model maker, and use the trained model to detect apples and oranges in images. We will also provide example code and a complete running notebook for Google Colab, as well as example code for running the model on edge devices and devices with Intel CPUs but no GPU, and an Android application for live inference.
 
-### Creating the dataset
+## Creating the dataset
 
 - Collect the images you want to detect.
 
@@ -72,7 +72,7 @@ of the dataset from left menu then expand the drive folder and then expand the f
 
  {{< /highlight >}}
 
-- then unzip the dataset to tail_data folder , as shown in the below code , you can change the path of the dataset if you are using a different path.
+- then unzip the dataset to train_data folder , as shown in the below code , you can change the path of the dataset if you are using a different path.
 
 {{< highlight go >}}
 
@@ -81,7 +81,7 @@ of the dataset from left menu then expand the drive folder and then expand the f
  {{< /highlight >}}
 
 - Now our dataset is ready , we will choose the model from the below table , the model is postfixed with
-number from zero to four , the number indicates the size of the model , the bigger the number the bigger the model size , the bigger the model size the better the accuracy , but the bigger the model size the slower the inference time , so you have to choose the model size based on your use case , i will train the
+number from zero to four , the number indicates the size of the model , the bigger the number the bigger the model size , the bigger the model size the better the accuracy , but the bigger the model size the slower the inference time , so you have to choose the model size based on your use case , i will choose the
 EfficientDet-Lite0 model , which is the smallest model , the model size is 4.4 MB , the inference time is 37 ms (*Latency measured on Pixel 4 using 4 threads on CPU*)  , and the average precision is 25.69%.
 
 | Model architecture  | Size(MB)* | Latency(ms)** | Average Precision*** |
@@ -92,9 +92,10 @@ EfficientDet-Lite0 model , which is the smallest model , the model size is 4.4 M
 | EfficientDet-Lite3  | 11.4      | 116           | 37.70%              |
 | EfficientDet-Lite4  | 19.9      | 260           | 41.96%              |
 
+## Installing & Importing the required libraries
+
 - let's install and import the required libraries , shown in the below code.
 
-###### Installing the required libraries
 
 {{< highlight go >}}
  %%capture
@@ -108,7 +109,7 @@ EfficientDet-Lite0 model , which is the smallest model , the model size is 4.4 M
 
     {{< /highlight >}}
 
-###### Importing the required libraries
+- Now we will import the required libraries , shown in the below code.
 
 ```python
 import numpy as np
@@ -127,7 +128,9 @@ from absl import logging
 logging.set_verbosity(logging.ERROR)
 ```
 
-###### choosing the model spec
+## Choosing the model spec
+
+- Now we will choose the model spec , shown in the below code , you can choose any model from the table above , i will choose the EfficientDet-Lite0 model , which is the smallest model and recommended for mobile devices.
 
 ```python
 spec = model_spec.get('efficientdet_lite0')
@@ -142,7 +145,7 @@ test_data =  object_detector.DataLoader.from_pascal_voc('/content/train_data/dat
 
 ```
 
-- Now we will train the model , shown in the below code , tje default epoches is 50 , you can change it to any number you want , the batch size is 8 , the train_whole_model is set to True , this will train the whole model , if you set it to False , it will train only the last layer.
+- Now we will train the model , shown in the below code , the default epoches is 50 , the batch size is 8 , the train_whole_model is set to True, this will train the whole model, if you set it to False , it will train only the last layer.
 
 ```python
 model = object_detector.create(train_data, model_spec=spec, batch_size=8, train_whole_model=True, validation_data=test_data)
@@ -153,7 +156,6 @@ model = object_detector.create(train_data, model_spec=spec, batch_size=8, train_
 
 ```python
 model.export(export_dir='.')
-    
 ```
 
 - for copying the model to your google drive , run the below code
@@ -162,4 +164,4 @@ model.export(export_dir='.')
     !cp /content/model.tflite /content/drive/MyDrive/tensorflow_lite_dataset
  {{< /highlight >}}
 
-In the next post we will see how to deploy the model to android device , and linux machine , and how to use it in our applications.
+In the next post we will see how to deploy the model to android device , and linux machine , and how to use it in our applications , stay tuned.
