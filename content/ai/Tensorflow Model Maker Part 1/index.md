@@ -8,6 +8,23 @@ keywords:
     - Data
     - AutoML
 draft: false 
+author: "Abdullah Al Hadrami"
+showToc: true
+TocOpen: false
+draft: false
+hidemeta: false
+comments: true
+canonicalURL: "https://www.aivision.app/ai/tensorflow-model-maker-part-1/"
+showReadingTime: true
+ShowReadingTime: true
+ShowBreadCrumbs: true
+ShowPostNavLinks: true
+ShowWordCount: true
+UseHugoToc: true
+editPage:
+    url: "https://github.com/aivisionapp/aivisionapp.github.io/blob/main/content/ai/Tensorflow%20Model%20Maker%20Part%201/index.md"
+    text: "Suggest Changes"
+    appendFilePath: false
 
 ---
 The Efficientdet lite object detection model is a lightweight, high-performing model developed by Google for deployment on devices with limited resources such as smartphones and edge devices. It is compatible with a wide range of platforms and devices including Android, Linux, Windows, Chrome OS, and iPhone, thanks to the cross-platform compatibility of the Tensorflow runtime. The model can achieve an inference speed of 20 milliseconds, making it fast for low-resource devices, and it can also be run on Intel CPUs without a GPU using the "XNNPack delegate" feature. Google provides an easy-to-use API called "Tensorflow model maker" for building and training the model, simplifying the development process. In this tutorial, we will show you how to prepare a dataset, build and train an object detection model using efficientnet lite architecture and Tensorflow Lite model maker, and use the trained model to detect apples and oranges in images. We will also provide example code and a complete running notebook for Google Colab, as well as example code for running the model on edge devices and devices with Intel CPUs but no GPU, and an Android application for live inference.
@@ -163,5 +180,6 @@ model.export(export_dir='.')
 
     !cp /content/model.tflite /content/drive/MyDrive/tensorflow_lite_dataset
  {{< /highlight >}}
+## Summary
 
 In the next post we will see how to deploy the model to android device , and linux machine , and how to use it in our applications , stay tuned.
