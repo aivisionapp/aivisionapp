@@ -71,7 +71,6 @@ Choose "Get Started" and then choose the images which you already collected from
 - if you are using Google Drive , from the left menu select "Files" and then "Mount Drive" , then click on the link and follow the instructions to mount your drive , then create the following folders by running the below cell in notebook is provided earlier.
 
 {{< highlight go >}}
-
 !mkdir raw_data
 !mkdir train_data
  {{< /highlight >}}
@@ -80,23 +79,18 @@ Choose "Get Started" and then choose the images which you already collected from
 of the dataset from left menu then expand the drive folder and then expand the folder you uploaded the dataset to , then right click on the dataset and select "Copy Path" , then paste it in the code below , then run the cell.
 
 {{< highlight go >}}
-
 !cp /content/drive/MyDrive/tensorflow_lite_dataset/dataset_apple_orange.zip /content/raw_data
-
  {{< /highlight >}}
 
 - if you are hosting the dataset on github , then you can skip the above step and run the below code to download the dataset from github , change the url to your dataset url.
 
 {{< highlight go >}}
-
 !wget -P /content/raw_data <https://raw.githubusercontent.com/Abdullamhd/od_efficientdet/main/dataset_apple_orange.zip>
-
  {{< /highlight >}}
 
 - then unzip the dataset to train_data folder , as shown in the below code , you can change the path of the dataset if you are using a different path.
 
 {{< highlight go >}}
-
 %%capture
 !unzip /content/raw_data/dataset_apple_orange.zip  -d /content/train_data
  {{< /highlight >}}
