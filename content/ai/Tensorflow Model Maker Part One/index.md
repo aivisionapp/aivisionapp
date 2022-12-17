@@ -68,7 +68,7 @@ Choose "Get Started" and then choose the images which you already collected from
 
 [Link to Colab Notebook](https://colab.research.google.com/github/Abdullamhd/od_efficientdet/blob/main/tflite_model_maker_github_hosted.ipynb)
 
-- if you are using Google Drive , from the left menu select "Files" and then "Mount Drive" , then click on the link and follow the instructions to mount your drive , then create the following folders by running the below cell in notebook which is pro
+- if you are using Google Drive , from the left menu select "Files" and then "Mount Drive" , then click on the link and follow the instructions to mount your drive , then create the following folders by running the below cell in notebook is provided earlier.
 
 {{< highlight go >}}
 
