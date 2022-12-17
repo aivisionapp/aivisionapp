@@ -37,7 +37,7 @@ Here is the live demo for Object Detection App on Android and Edge Devices.
 
 ```bash
 
-git clone
+git clone https://github.com/Abdullamhd/od_efficientdet
     
 ```
 
