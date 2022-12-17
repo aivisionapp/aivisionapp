@@ -35,6 +35,11 @@ Here is the live demo for Object Detection App on Android and Edge Devices.
 
 ## Creating the dataset
 
+ - click the below notebook link, which contain the running example of all code.
+
+[Link to Colab Notebook](https://colab.research.google.com/github/Abdullamhd/od_efficientdet/blob/main/tflite_model_maker_github_hosted.ipynb)
+
+
 - Collect the images you want to detect.
 
 - Go to <https://www.makesense.ai/>
