@@ -1,6 +1,6 @@
 ---
 
-title: "Deploying Object Detection App into Android & EDGE Devices part two "
+title: "Deploying Object Detection App into Android & EDGE Devices part 2 "
 description: "In this post, we will demonstrate how to deploy the object detection model that we built in the previous post to both Android and edge devices. The model was built using the TensorFlow Model Maker API and the efficientdet-lite model, which is optimized for mobile and edge devices"  
 keywords: 
     - AI 
