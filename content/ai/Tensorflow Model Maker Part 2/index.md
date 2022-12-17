@@ -1,6 +1,6 @@
 ---
 
-title: "Building Live Detection ML Model Using Tensorflow Model Maker Part1"
+title: "Building Live Detection ML Model Using Tensorflow Model Maker Part2"
 description: "In this blog post, we will show you how to build a live object detection machine learning model using TensorFlow Model Maker. This is the first part of a series of posts that will guide you through the process of creating and training a model using TensorFlow Model Maker. "  
 keywords: 
     - AI 
