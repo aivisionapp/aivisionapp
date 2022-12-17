@@ -99,9 +99,8 @@ then you can build and run the app on your Android device.
 
 ### Running the App
 
-assuming you have IP camera or webcam connected to your computer,  if you don't have one, you can use the IP camera simulator app on your phone named "IP Webcam" , search for it on the play store and install it, then run the app , from the app go to menu and select "Start Server", the app will display the IP address and port number, you can use this IP address and port number to connect to the camera from your computer.
-
-then open file `detect.py` and replace the IP address and port number with your own IP address and port number, line 22 , 23
+assuming you have IP camera or webcam connected to your computer,  if you don't have one, you can use the IP camera simulator app on your phone named "IP Webcam" , search for it on the play store and install it, then run the app , from the app go to menu and select "Start Server", the app will display the IP address and port number,you can use it to connect to the camera from your computer.
+then open file `detect.py` and replace the IP address and port number with your own , on line 22 , 23
 
 
 
