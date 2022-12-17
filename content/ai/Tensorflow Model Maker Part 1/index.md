@@ -101,7 +101,8 @@ then you can build and run the app on your Android device.
 ## Building the Object Detection App for Edge Devices
 
 ### Prerequisites
-- Windows WSL2 or Linux OS(Debian, Ubuntu, etc..)
+- PC or Raspberry Pi or EDGE Device with Linux OS
+- OS : Windows WSL2 or Linux OS(Debian, Ubuntu, etc..)
 - Python 3.7 or higher
 
 ### Running the App
