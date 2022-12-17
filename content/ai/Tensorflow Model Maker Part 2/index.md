@@ -14,7 +14,7 @@ TocOpen: false
 draft: false
 hidemeta: false
 comments: false
-canonicalURL: "https://www.aivision.app/ai/tensorflow-model-maker-part-1/"
+canonicalURL: "https://www.aivision.app/ai/tensorflow-model-maker-part-2/"
 showReadingTime: true
 ShowReadingTime: true
 ShowBreadCrumbs: true
