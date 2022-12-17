@@ -6,5 +6,5 @@ enableEmoji: true
 enableGitInfo: true
 markup:
   highlight:
-    lineNos: true
+    lineNos: false
 
